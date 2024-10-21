@@ -33,6 +33,24 @@
     </div>
   </form>
 
+  <script type="module">
+    import { tambahBuah } from './main.js';
+
+    $(document).ready(async function() {
+      // ketika tombol tambah di pencet
+      $('#tombolsimpan').click(async function(event) {
+        event.preventDefault()
+        // ambil data dari formulir
+        let nama = $('#inputnama').val()
+        let warna = $('#inputwarna').val()
+        let harga = $('#inputharga').val()
+
+        await tambahBuah(nama, warna, harga)
+        window.location.href = 'index.html'
+      });
+    });
+  </script>
+
 </body>
 
 </html>
